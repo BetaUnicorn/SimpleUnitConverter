@@ -56,6 +56,25 @@ public class GUItabs extends javax.swing.JFrame {
         volumeTab = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         SMC2 = new javax.swing.JLabel();
+        fromVolume = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        toVolume = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        inputFieldVolume = new javax.swing.JTextField();
+        convertButtonVolume = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        toFieldVolume = new javax.swing.JTextField();
+        temperature = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        SMC3 = new javax.swing.JLabel();
+        fromTemp = new javax.swing.JComboBox<>();
+        jLabel14 = new javax.swing.JLabel();
+        toTemp = new javax.swing.JComboBox<>();
+        inputFieldTemp = new javax.swing.JTextField();
+        convertButtonTemp = new javax.swing.JButton();
+        toFieldTemp = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -278,22 +297,86 @@ public class GUItabs extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Weight");
+        jLabel6.setText("Volume");
 
         SMC2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         SMC2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SMC2.setText("Simple Unit Converter");
 
+        fromVolume.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "meter (m3)", "deci (dm3) / liter (L)", "deci liter (dL)", "centi liter (cL)", "centi (cm3) / mL", "milli (mm3)", "micro (μm3)", "nano (nm3)" }));
+        fromVolume.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fromVolumeActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel10.setText("to");
+
+        toVolume.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "meter (m3)", "deci (dm3) / liter (L)", "deci liter (dL)", "centi liter (cL)", "centi (cm3) / mL", "milli (mm3)", "micro (μm3)", "nano (nm3)" }));
+
+        jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel11.setText("Input:");
+
+        inputFieldVolume.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputFieldVolumeActionPerformed(evt);
+            }
+        });
+        inputFieldVolume.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inputFieldVolumeKeyTyped(evt);
+            }
+        });
+
+        convertButtonVolume.setText("Convert");
+        convertButtonVolume.setAutoscrolls(true);
+        convertButtonVolume.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        convertButtonVolume.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                convertButtonVolumeActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel12.setText("Output:");
+
+        toFieldVolume.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toFieldVolumeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout volumeTabLayout = new javax.swing.GroupLayout(volumeTab);
         volumeTab.setLayout(volumeTabLayout);
         volumeTabLayout.setHorizontalGroup(
             volumeTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, volumeTabLayout.createSequentialGroup()
+            .addGroup(volumeTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(volumeTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SMC2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, volumeTabLayout.createSequentialGroup()
+                        .addGroup(volumeTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SMC2, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, volumeTabLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(volumeTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(inputFieldVolume, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(volumeTabLayout.createSequentialGroup()
+                                .addComponent(fromVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(toVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(toFieldVolume))
+                        .addGap(34, 34, 34))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, volumeTabLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(convertButtonVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(116, 116, 116))
         );
         volumeTabLayout.setVerticalGroup(
             volumeTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,10 +385,135 @@ public class GUItabs extends javax.swing.JFrame {
                 .addComponent(SMC2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel6)
-                .addGap(497, 497, 497))
+                .addGap(73, 73, 73)
+                .addGroup(volumeTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(toVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fromVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(71, 71, 71)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(inputFieldVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(convertButtonVolume)
+                .addGap(35, 35, 35)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(toFieldVolume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(74, 74, 74))
         );
 
         panes.addTab("Volume", volumeTab);
+
+        jLabel13.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Temperature");
+
+        SMC3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        SMC3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SMC3.setText("Simple Unit Converter");
+
+        fromTemp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kelvin (K)", "Celsius (C)", "Fahrenheit (F)" }));
+        fromTemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fromTempActionPerformed(evt);
+            }
+        });
+
+        jLabel14.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel14.setText("to");
+
+        toTemp.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kelvin (K)", "Celsius (C)", "Fahrenheit (F)" }));
+
+        inputFieldTemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputFieldTempActionPerformed(evt);
+            }
+        });
+        inputFieldTemp.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inputFieldTempKeyTyped(evt);
+            }
+        });
+
+        convertButtonTemp.setText("Convert");
+        convertButtonTemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                convertButtonTempActionPerformed(evt);
+            }
+        });
+
+        toFieldTemp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toFieldTempActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel15.setText("Output:");
+
+        jLabel16.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel16.setText("Input:");
+
+        javax.swing.GroupLayout temperatureLayout = new javax.swing.GroupLayout(temperature);
+        temperature.setLayout(temperatureLayout);
+        temperatureLayout.setHorizontalGroup(
+            temperatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(temperatureLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(temperatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(temperatureLayout.createSequentialGroup()
+                        .addGroup(temperatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SMC3, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, temperatureLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(temperatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, temperatureLayout.createSequentialGroup()
+                                .addComponent(convertButtonTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(110, 110, 110))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, temperatureLayout.createSequentialGroup()
+                                .addGroup(temperatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(toFieldTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(temperatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(temperatureLayout.createSequentialGroup()
+                                            .addComponent(fromTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(35, 35, 35)
+                                            .addComponent(jLabel14)
+                                            .addGap(27, 27, 27)
+                                            .addComponent(toTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(inputFieldTemp, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(35, 35, 35))))))
+        );
+        temperatureLayout.setVerticalGroup(
+            temperatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(temperatureLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(SMC3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13)
+                .addGap(61, 61, 61)
+                .addGroup(temperatureLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fromTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(toTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(67, 67, 67)
+                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(inputFieldTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(convertButtonTemp)
+                .addGap(47, 47, 47)
+                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(toFieldTemp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70))
+        );
+
+        panes.addTab("Temperature", temperature);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -391,6 +599,71 @@ public class GUItabs extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_toFieldLengthActionPerformed
 
+    private void fromVolumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fromVolumeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fromVolumeActionPerformed
+
+    private void inputFieldVolumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputFieldVolumeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputFieldVolumeActionPerformed
+
+    private void inputFieldVolumeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputFieldVolumeKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputFieldVolumeKeyTyped
+
+    private void convertButtonVolumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertButtonVolumeActionPerformed
+        VolumeCalculator VolumeCalc = new VolumeCalculator();
+        String from = this.fromVolume.getSelectedItem().toString();
+        String to = this.toVolume.getSelectedItem().toString();
+        String inputField = this.inputFieldVolume.getText();
+        if(inputField.isEmpty()) {
+
+            JOptionPane.showMessageDialog(null, "Please input a number to convert");
+        }
+        double input = Double.parseDouble(inputField);
+
+        double output = VolumeCalc.handleInput(from, to, input);
+
+        toFieldVolume.setText(Double.toString(output));
+
+    }//GEN-LAST:event_convertButtonVolumeActionPerformed
+
+    private void toFieldVolumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toFieldVolumeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_toFieldVolumeActionPerformed
+
+    private void fromTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fromTempActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fromTempActionPerformed
+
+    private void inputFieldTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputFieldTempActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputFieldTempActionPerformed
+
+    private void inputFieldTempKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inputFieldTempKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputFieldTempKeyTyped
+
+    private void convertButtonTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertButtonTempActionPerformed
+        TemperatureCalculator tempCalc = new TemperatureCalculator();
+        String from = this.fromTemp.getSelectedItem().toString();
+        String to = this.toTemp.getSelectedItem().toString();
+        String inputField = this.inputFieldTemp.getText();
+        if(inputField.isEmpty()) {
+
+            JOptionPane.showMessageDialog(null, "Please input a number to convert");
+        }
+        double input = Double.parseDouble(inputField);
+
+        double output = tempCalc.handleInput(from, to, input);
+
+        toFieldTemp.setText(Double.toString(output));
+    }//GEN-LAST:event_convertButtonTempActionPerformed
+
+    private void toFieldTempActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toFieldTempActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_toFieldTempActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -430,13 +703,27 @@ public class GUItabs extends javax.swing.JFrame {
     private javax.swing.JLabel SMC;
     private javax.swing.JLabel SMC1;
     private javax.swing.JLabel SMC2;
+    private javax.swing.JLabel SMC3;
     private javax.swing.JButton convertButtonLength;
+    private javax.swing.JButton convertButtonTemp;
+    private javax.swing.JButton convertButtonVolume;
     private javax.swing.JButton convertButtonWeight;
     private javax.swing.JComboBox<String> from;
     private javax.swing.JComboBox<String> fromLength;
+    private javax.swing.JComboBox<String> fromTemp;
+    private javax.swing.JComboBox<String> fromVolume;
     private javax.swing.JTextField inputFieldLength;
+    private javax.swing.JTextField inputFieldTemp;
+    private javax.swing.JTextField inputFieldVolume;
     private javax.swing.JTextField inputFieldWeight;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -447,10 +734,15 @@ public class GUItabs extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel lengthTab;
     private javax.swing.JTabbedPane panes;
+    private javax.swing.JPanel temperature;
     private javax.swing.JComboBox<String> to;
     private javax.swing.JTextField toFieldLength;
+    private javax.swing.JTextField toFieldTemp;
+    private javax.swing.JTextField toFieldVolume;
     private javax.swing.JTextField toFieldWeight;
     private javax.swing.JComboBox<String> toLength;
+    private javax.swing.JComboBox<String> toTemp;
+    private javax.swing.JComboBox<String> toVolume;
     private javax.swing.JPanel volumeTab;
     private javax.swing.JPanel weigthTab;
     // End of variables declaration//GEN-END:variables
