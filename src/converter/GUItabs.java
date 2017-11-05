@@ -75,6 +75,14 @@ public class GUItabs extends javax.swing.JFrame {
         toFieldTemp = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
+        mB = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        density1 = new javax.swing.JTextField();
+        volume1 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        calcButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -515,6 +523,93 @@ public class GUItabs extends javax.swing.JFrame {
 
         panes.addTab("Temperature", temperature);
 
+        jLabel17.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel17.setText("m");
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel18.setText("ρ");
+
+        density1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                density1ActionPerformed(evt);
+            }
+        });
+
+        volume1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volume1ActionPerformed(evt);
+            }
+        });
+
+        jLabel19.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel19.setText("V");
+
+        calcButton.setText("Calculate");
+        calcButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                calcButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout mBLayout = new javax.swing.GroupLayout(mB);
+        mB.setLayout(mBLayout);
+        mBLayout.setHorizontalGroup(
+            mBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mBLayout.createSequentialGroup()
+                .addGroup(mBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mBLayout.createSequentialGroup()
+                        .addGap(192, 192, 192)
+                        .addGroup(mBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mBLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabel17))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(mBLayout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addGroup(mBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(mBLayout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addComponent(jLabel18)
+                                .addGap(114, 114, 114)
+                                .addComponent(jLabel19))
+                            .addGroup(mBLayout.createSequentialGroup()
+                                .addComponent(density1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(53, 53, 53)
+                                .addComponent(volume1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mBLayout.createSequentialGroup()
+                .addGap(0, 154, Short.MAX_VALUE)
+                .addComponent(calcButton, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(139, 139, 139))
+        );
+        mBLayout.setVerticalGroup(
+            mBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mBLayout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(mBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mBLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(density1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(volume1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 359, Short.MAX_VALUE)
+                .addComponent(calcButton)
+                .addGap(30, 30, 30))
+        );
+
+        panes.addTab("\"Mængeberegning\"", mB);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -664,6 +759,22 @@ public class GUItabs extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_toFieldTempActionPerformed
 
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void density1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_density1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_density1ActionPerformed
+
+    private void volume1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volume1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_volume1ActionPerformed
+
+    private void calcButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_calcButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -704,10 +815,12 @@ public class GUItabs extends javax.swing.JFrame {
     private javax.swing.JLabel SMC1;
     private javax.swing.JLabel SMC2;
     private javax.swing.JLabel SMC3;
+    private javax.swing.JButton calcButton;
     private javax.swing.JButton convertButtonLength;
     private javax.swing.JButton convertButtonTemp;
     private javax.swing.JButton convertButtonVolume;
     private javax.swing.JButton convertButtonWeight;
+    private javax.swing.JTextField density1;
     private javax.swing.JComboBox<String> from;
     private javax.swing.JComboBox<String> fromLength;
     private javax.swing.JComboBox<String> fromTemp;
@@ -724,6 +837,9 @@ public class GUItabs extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -732,7 +848,9 @@ public class GUItabs extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel lengthTab;
+    private javax.swing.JPanel mB;
     private javax.swing.JTabbedPane panes;
     private javax.swing.JPanel temperature;
     private javax.swing.JComboBox<String> to;
@@ -743,6 +861,7 @@ public class GUItabs extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> toLength;
     private javax.swing.JComboBox<String> toTemp;
     private javax.swing.JComboBox<String> toVolume;
+    private javax.swing.JTextField volume1;
     private javax.swing.JPanel volumeTab;
     private javax.swing.JPanel weigthTab;
     // End of variables declaration//GEN-END:variables
